@@ -1,6 +1,5 @@
 # Project
-**Pipeline for the analysis of ketamine and psilocybin power spectral density
-**
+**Pipeline for the analysis of ketamine and psilocybin power spectral density**
 
 **Author:** Milad Soltanzadeh
 **Supervisor:** Dr. Andreea Diaconescu 

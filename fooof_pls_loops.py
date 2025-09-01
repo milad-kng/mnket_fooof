@@ -645,7 +645,6 @@ def prep_behav_data(options):
 # =============================================================================
 #     
 # =============================================================================
-    behav_path = 'D:/Science/Coding/mnket_fooof_paper/mnket_fooof/mnket_behavioural_data/Q_data.xlsx'#'PROVIDE ASC DATA PATH'
     labels = pd.read_excel(behav_path,header=1,skiprows=0,nrows=1)
     
     # Read ASC data

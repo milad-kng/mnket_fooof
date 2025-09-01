@@ -187,36 +187,3 @@ bpls_fooof_dict = run_plot_bpls(param_list, param_labels_filtered, options,
 
 
 
-
-
-
-frontal_channels =  ['Fp1', 'AF7', 'AF3', 'F1' ,'F3' ,'F5', 'F7',
-                     'Fpz' ,'Fp2', 'AF8','AF4' ,'AFz' ,'Fz' ,'F2' ,
-                     'F4' ,'F6', 'F8']
-
-
-X_W = np.reshape(bpls_fooof_dict['std'].bootres.x_weights_normed, (len(frontal_channels),8))
-
-
-a=np.argmax(X_W[:,1])
-
-row, col = np.unravel_index(a, X_W.shape)
-
-n = 6
-flat_idx = np.argpartition(X_W.flatten(), -n)[-n:]
-
-# Convert flat indices to 2D coordinates
-rows, cols = np.unravel_index(flat_idx, X_W.shape)
-
-# Get the top n values
-top_values = X_W[rows, cols]
-
-# Optional: sort descending
-sorted_order = np.argsort(-top_values)
-rows = rows[sorted_order]
-cols = cols[sorted_order]
-top_values = top_values[sorted_order]
-
-print("Top values:", top_values)
-print("Row indices:", rows)
-print("Column indices:", cols)
